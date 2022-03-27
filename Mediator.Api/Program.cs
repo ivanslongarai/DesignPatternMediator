@@ -1,3 +1,4 @@
+using System.Reflection;
 using Mediator.Application.Handlers;
 using MediatR;
 
@@ -7,7 +8,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddMediatR(typeof(ChangePlayerCommandHandler));
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
